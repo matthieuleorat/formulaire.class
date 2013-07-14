@@ -91,7 +91,7 @@ class formulaire {
 		$dis	: disable le champ -> true ou false
 		$class 	: Class du champ
 	*/
-	function genererBaliseForm($id,$action,$method='POST',$class=''){
+	private function genererBaliseForm($id,$action,$method='POST',$class=''){
 		return "<form id='".$id."' method='".$method."' action='".$action."' class='".$class."'>";
 	}
 	
@@ -104,7 +104,7 @@ class formulaire {
 		$value	: valeur à charger
 		$class 	: Classe du champ
 	*/
-	function genererFormText($id,$label,$value='',$dis=false, $class=''){
+	private function genererFormText($id,$label,$value='',$dis=false, $class=''){
 		$a = '';
 		if(!$dis){$a .= "disabled";}
 		return "<p>
@@ -120,7 +120,7 @@ class formulaire {
 		$id 	: id du champ
 		$value	: valeur à charger
 	*/
-	function genererFormHidden($id,$value=''){
+	private function genererFormHidden($id,$value=''){
 		return "<input type='hidden' name='".$id."' id='".$id."' value='".$value."' />";
 	}
 	
@@ -136,7 +136,7 @@ class formulaire {
 		$dis 	: disable le champ -> true ou false
 		$class 	: Classe du champ
 	*/
-	function genererFormSelect($id,$label,$d,$ds=0,$multi=false,$dis=false,$class=''){
+	private function genererFormSelect($id,$label,$d,$ds=0,$multi=false,$dis=false,$class=''){
 		$a = '';
 		if(is_int($multi)){$a .= "multiple size='".$multi."'";}
 		if(!$dis){$a .= "disabled";}
@@ -167,7 +167,7 @@ class formulaire {
 		$d 		: array (value, label)
 		$dis 	: disable le champ -> true ou false
 	*/
-	function genererFormRadio($name,$label,$d,$dis=false){
+	private function genererFormRadio($name,$label,$d,$dis=false){
 		$a = '';
 		if(!$dis){$a .= "disabled";}
 		$r = '<label>'.$label.'</label><p>';
@@ -189,7 +189,7 @@ class formulaire {
 		$class 	: Classe du champ
 		$dis 	: disable le champ -> true ou false
 	*/
-	function genererFormSubmit($id,$value='Envoyer',$dis=false,$class=''){
+	private function genererFormSubmit($id,$value='Envoyer',$dis=false,$class=''){
 		$a = '';
 		if(!$dis){$a .= "disabled";}
 		return "<input ".$a." type='submit' id='".$id."' name='".$id."' value='".$value."' class='".$class."'/>";
@@ -206,7 +206,7 @@ class formulaire {
 		$class 			: Classe du champ
 		$placeholder	: PlaceHolder
 	*/
-	function genererFormSearch($id,$label,$value='',$dis=false, $class='',$placeholder=''){
+	private function genererFormSearch($id,$label,$value='',$dis=false, $class='',$placeholder=''){
 		$a = '';
 		if(!$dis){$a .= "disabled";}
 		return "<p>
@@ -225,7 +225,7 @@ class formulaire {
 		$dis 	: disable le champ -> true ou false
 		$class 	: Classe du champ
 	*/
-	function genererFormTel($id,$label,$value='',$dis=false, $class=''){
+	private function genererFormTel($id,$label,$value='',$dis=false, $class=''){
 		$a = '';
 		if(!$dis){$a .= "disabled";}
 		return "<p>
@@ -244,7 +244,7 @@ class formulaire {
 		$dis 	: disable le champ -> true ou false
 		$class 	: Classe du champ
 	*/
-	function genererFormEmail($id,$label,$value='',$dis=false, $class=''){
+	private function genererFormEmail($id,$label,$value='',$dis=false, $class=''){
 		$a = '';
 		if(!$dis){$a .= "disabled";}
 		return "<p>
@@ -263,7 +263,7 @@ class formulaire {
 		$dis 	: disable le champ -> true ou false
 		$class 	: Classe du champ
 	*/
-	function genererFormUrl($id,$label,$value='',$dis=false, $class=''){
+	private function genererFormUrl($id,$label,$value='',$dis=false, $class=''){
 		$a = '';
 		if(!$dis){$a .= "disabled";}
 		return "<p>
@@ -284,7 +284,7 @@ class formulaire {
 		$min	:
 		$max	:
 	*/
-	function genererFormDate($id,$label,$value='',$dis=false, $class='',$min='',$max=''){
+	private function genererFormDate($id,$label,$value='',$dis=false, $class='',$min='',$max=''){
 		$a = '';
 		if(!$dis){$a .= "disabled";}
 		if(!empty($min)){$a .= " min='".$min."' ";}
@@ -308,7 +308,7 @@ class formulaire {
 		$max	:
 		$step	:
 	*/
-	function genererFormNumber($id,$label,$value='',$dis=false, $class='',$step='',$min='',$max=''){
+	private function genererFormNumber($id,$label,$value='',$dis=false, $class='',$step='',$min='',$max=''){
 		$a = '';
 		if(!$dis){$a .= "disabled";}
 		if(!empty($step)){$a .= " step='".$step."' ";}
@@ -330,7 +330,7 @@ class formulaire {
 		$dis 	: disable le champ -> true ou false
 		$class 	: Classe du champ
 	*/
-	function genererFormRange($id,$label,$value='',$dis=false, $class='',$step='',$min='',$max=''){
+	private function genererFormRange($id,$label,$value='',$dis=false, $class='',$step='',$min='',$max=''){
 		$a = '';
 		if(!$dis){$a .= "disabled";}
 		if(!empty($step)){$a .= " step='".$step."' ";}
@@ -352,7 +352,7 @@ class formulaire {
 		$dis 	: disable le champ -> true ou false
 		$class 	: Classe du champ
 	*/
-	function genererFormColor($id,$label,$value='',$dis=false, $class=''){
+	private function genererFormColor($id,$label,$value='',$dis=false, $class=''){
 		$a = '';
 		if(!$dis){$a .= "disabled";}
 		return "<p>
@@ -371,7 +371,7 @@ class formulaire {
 		$value	: valeur à charger
 		$class 	: Classe du champ
 	*/
-	function genererFormOutput($id,$label,$dis=false, $class='',$for=''){
+	private function genererFormOutput($id,$label,$dis=false, $class='',$for=''){
 		$a = '';
 		if(!$dis){$a .= "disabled";}
 		if(!empty($for)){$a .= " for='".$for."' ";}
