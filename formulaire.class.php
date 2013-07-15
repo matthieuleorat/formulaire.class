@@ -73,6 +73,9 @@ class formulaire {
 				case 'color':
 					$f .= formulaire::genererFormColor($k,$v[1],$v[2],$v[3]);
 				break;
+				case 'file':
+					$f .= formulaire::genererFormFile($k,$v[1],$v[2],$v[3]);
+				break;
 				case 'submit':
 					$fs = formulaire::genererFormSubmit($k,$v[1],$v[2]);
 				break;
@@ -379,6 +382,27 @@ class formulaire {
 			<label for='".$id."'>".$label."</label>
 			<input ".$a." type='color' name='".$id."' id='".$id."' class='".$class."'/>
 			</p>";
+	}
+	
+	/* ****************** */
+	/* Generer input file */
+	/* ****************** */
+	/*
+		$id 	: id du champ
+		$label	: Nom du champ
+		$value	: valeur à charger
+		$dis 	: disable le champ -> true ou false
+		$class 	: Classe du champ
+		$multiple :
+	*/
+	private function genererFormFile($id,$label,$value='',$dis=false, $class='', $multiple=false){
+		$a = '';
+		if(!$dis){$a .= " disabled ";}
+		if(!$multiple){$a .= " multiple ";}
+		return "<p>
+			<label for='".$id."'>".$label."</label>
+			<input ".$a." type='file' name='".$id."' id='".$id."' class='".$class."' />
+		</p>";
 	}
 
 }
